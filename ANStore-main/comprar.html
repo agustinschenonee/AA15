@@ -100,8 +100,14 @@
 
                 <p class="resumen-total">Total: $25000</p>
             </aside>
+
+               
+        <input type="text" id="inputCupon" placeholder="Ingresá tu cupón">
+        <button onclick="validarCupon()">Aplicar Cupón</button>        
+        <p id="mensajeCupon"></p>
         </section>
 
+     
     </main>        
 
     <footer>
@@ -130,33 +136,53 @@
     </footer>
 
     <script src="js/script.js"></script>
-    <script>
-        let inputProd1 = document.getElementById("cantidad1");
-        let textoSubtotal1 = document.getElementById("subtotal1");
+<script>
+   
+    let inputProd1 = document.getElementById("cantidad1");
+    let textoSubtotal1 = document.getElementById("subtotal1");
 
-        let inputProd2 = document.getElementById("cantidad2");
-        let textoSubtotal2 = document.getElementById("subtotal2");
-
-        inputProd1.addEventListener("input", function() {
-        let cantidad = inputProd1.value; // Agarramos el número que el usuario escribió
-        let precio = 10000; // El precio fijo de este producto
-        
-        let nuevoSubtotal = cantidad * precio; // Hacemos la matemática
-        
-        // Lo mostramos en la pantalla modificando el texto
+    inputProd1.addEventListener("input", function() {
+        let cantidad = inputProd1.value; 
+        let precio = 10000; 
+        let nuevoSubtotal = cantidad * precio; 
         textoSubtotal1.innerText = "Subtotal: $" + nuevoSubtotal; 
+    });
 
-        inputProd2.addEventListener("input", function() {
-        let cantidad = inputProd2.value; // Agarramos el número que el usuario escribió
-        let precio = 15000; // El precio fijo de este producto
-        
-        let nuevoSubtotal = cantidad * precio; // Hacemos la matemática
-        
-        // Lo mostramos en la pantalla modificando el texto
+  
+    let inputProd2 = document.getElementById("cantidad2");
+    let textoSubtotal2 = document.getElementById("subtotal2");
+
+    inputProd2.addEventListener("input", function() {
+        let cantidad = inputProd2.value; 
+        let precio = 15000; 
+        let nuevoSubtotal = cantidad * precio; 
         textoSubtotal2.innerText = "Subtotal: $" + nuevoSubtotal; 
-});
-});
-    </script>
+    });
+
+   
+    function validarCupon(){
+        
+        let input = document.getElementById("inputCupon");
+        let mensaje = document.getElementById("mensajeCupon");
+
+        let codigo = input.value.trim().toUpperCase();
+
+        mensaje.className = "";
+
+        if (codigo === "") {
+            mensaje.innerText = "Por favor, ingrese un código";
+            mensaje.classList.add("mensaje-error");
+
+        } else if (codigo === "UCP10") {
+            mensaje.innerText = "¡Cupón aplicado! Tenés un 10% de descuento";
+            mensaje.classList.add("mensaje-exito");
+
+        } else {
+            mensaje.innerText = "Código inválido o vencido";
+            mensaje.classList.add("mensaje-error");
+        }
+    }
+</script>
 
 </body>
 </html>
