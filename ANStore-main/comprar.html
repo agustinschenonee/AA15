@@ -137,7 +137,7 @@
 
     <script src="js/script.js"></script>
 <script>
-   
+
     let inputProd1 = document.getElementById("cantidad1");
     let textoSubtotal1 = document.getElementById("subtotal1");
 
@@ -148,7 +148,7 @@
         textoSubtotal1.innerText = "Subtotal: $" + nuevoSubtotal; 
     });
 
-  
+   
     let inputProd2 = document.getElementById("cantidad2");
     let textoSubtotal2 = document.getElementById("subtotal2");
 
@@ -159,9 +159,8 @@
         textoSubtotal2.innerText = "Subtotal: $" + nuevoSubtotal; 
     });
 
-   
+    // === VALIDAR CUPÓN ===
     function validarCupon(){
-        
         let input = document.getElementById("inputCupon");
         let mensaje = document.getElementById("mensajeCupon");
 
