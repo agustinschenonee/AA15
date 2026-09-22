@@ -138,21 +138,21 @@
         let textoSubtotal2 = document.getElementById("subtotal2");
 
         inputProd1.addEventListener("input", function() {
-        let cantidad = inputProd1.value; // Agarramos el número que el usuario escribió
-        let precio = 10000; // El precio fijo de este producto
+        let cantidad = inputProd1.value; 
+        let precio = 10000; 
         
-        let nuevoSubtotal = cantidad * precio; // Hacemos la matemática
+        let nuevoSubtotal = cantidad * precio; 
         
-        // Lo mostramos en la pantalla modificando el texto
+       
         textoSubtotal1.innerText = "Subtotal: $" + nuevoSubtotal; 
 
         inputProd2.addEventListener("input", function() {
-        let cantidad = inputProd2.value; // Agarramos el número que el usuario escribió
-        let precio = 15000; // El precio fijo de este producto
+        let cantidad = inputProd2.value; 
+        let precio = 15000; 
         
-        let nuevoSubtotal = cantidad * precio; // Hacemos la matemática
+        let nuevoSubtotal = cantidad * precio; 
         
-        // Lo mostramos en la pantalla modificando el texto
+        
         textoSubtotal2.innerText = "Subtotal: $" + nuevoSubtotal; 
 });
 });
