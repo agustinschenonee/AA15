@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Responsivo</title>
+  <style>
+    body { 
+      margin: 0; 
+      font-family: sans-serif; 
+      padding: 20px;
+    }
+
+    /* Contenedor: por defecto (móvil) en columna */
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .caja {
+      background: lightseagreen;
+      padding: 15px;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+
+    /* Pantallas medianas y grandes (más de 600px): se ponen en fila */
+    @media (min-width: 600px) {
+      .contenedor {
+        flex-direction: row;
+      }
+
+      .caja {
+        flex: 1; /* Hace que todas ocupen el mismo ancho */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor">
+    <div class="caja">Este es un diseño responsivo</div>
+    <div class="caja">Hola</div>
+    <div class="caja">chau</div>
+    <div class="caja">Hola chau</div>
+  </div>
+
+</body>
+</html>
